@@ -1,18 +1,23 @@
+import pypresence
 import pygame
 import random
 import sys
+import discordrpc
+import mixer
+
 
 pygame.init()
-
-
+pygame.display.set_caption('Fall')
 
 WIDTH = 1440
 HEIGHT = 720
 
-RED = (30,200,0)
+RED = (30,190,0)
 BLUE = (200,200,200)
 YELLOW = (255,255,0)
 BACKGROUND_COLOR = (30,60,90)
+
+ORANGE = (255,170,0)
 
 player_size = 50
 player_pos = [WIDTH/2, HEIGHT-2*player_size]
@@ -120,7 +125,7 @@ while not game_over:
 	screen.blit(label, (WIDTH-200, HEIGHT-40))
 
 	text = "Created by Derpi"
-	label = myFont.render(text, 1, YELLOW)
+	label = myFont.render(text, 1, ORANGE)
 	screen.blit(label, (WIDTH-1435, HEIGHT-40))
 
 	if collision_check(enemy_list, player_pos):
