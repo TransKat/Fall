@@ -4,6 +4,8 @@ import sys
 
 pygame.init()
 
+
+
 WIDTH = 1440
 HEIGHT = 720
 
@@ -26,6 +28,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 game_over = False
 
 score = 0
+
+fall = 0
 
 clock = pygame.time.Clock()
 
@@ -114,6 +118,10 @@ while not game_over:
 	text = "Score:" + str(score)
 	label = myFont.render(text, 1, YELLOW)
 	screen.blit(label, (WIDTH-200, HEIGHT-40))
+
+	text = "Created by Derpi"
+	label = myFont.render(text, 1, YELLOW)
+	screen.blit(label, (WIDTH-1435, HEIGHT-40))
 
 	if collision_check(enemy_list, player_pos):
 		game_over = True
